@@ -1,0 +1,18 @@
+def sum(b,e,l):
+    sum = 0
+    for i in range(b,e):
+        sum = sum + l[i]
+    return sum
+
+def split(l):
+    for i in range(1,(len(l)-1)):
+        s1 = sum(0,i,l)    #take left side sum   sum(begin,end,list)
+        s2 = sum(i+1,len(l),l)  #take right side sum
+        if s1 == s2:                #compair
+            print("equlibrium element is:",l[i])
+            print("Yes")
+            exit()
+    print("No equlibrium element")
+
+l = list(map(int,input().split(' ')))
+split(l)
